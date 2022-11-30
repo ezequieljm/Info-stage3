@@ -6,17 +6,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity(name = "person")
-public class Person {
+@Entity(name = "users")
+public class User {
     /*
      * Attributes
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPerson;
+    private Long idUser;
 
     @Column(name = "key_person")
-    private String keyPerson;
+    private String keyUser;
 
     @Column(name = "firstname")
     private String firstname;
@@ -25,7 +25,7 @@ public class Person {
     private String lastname;
 
     @Column(name = "person_status")
-    private boolean personStatus;
+    private boolean userStatus;
 
     @Column(name = "dni")
     private int dni;
@@ -33,35 +33,32 @@ public class Person {
     /*
      * Constructors
      */
-    public Person() {
+    public User() {
     }
 
-    public Person(Long idPerson, String keyPerson, String firstname, String lastname, boolean personStatus, int dni) {
-        this.idPerson = idPerson;
-        this.keyPerson = keyPerson;
+    public User(Long idUser, String keyUser, String firstname, String lastname, boolean userStatus, int dni) {
+        this.idUser = idUser;
+        this.keyUser = keyUser;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.personStatus = personStatus;
+        this.userStatus = userStatus;
         this.dni = dni;
     }
 
-    /*
-     * Getters and Setters
-     */
-    public Long getIdPerson() {
-        return idPerson;
+    public Long getIdUser() {
+        return idUser;
     }
 
-    public void setIdPerson(Long idPerson) {
-        this.idPerson = idPerson;
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
     }
 
-    public String getKeyPerson() {
-        return keyPerson;
+    public String getKeyUser() {
+        return keyUser;
     }
 
-    public void setKeyPerson(String keyPerson) {
-        this.keyPerson = keyPerson;
+    public void setKeyUser(String keyUser) {
+        this.keyUser = keyUser;
     }
 
     public String getFirstname() {
@@ -80,12 +77,12 @@ public class Person {
         this.lastname = lastname;
     }
 
-    public boolean isPersonStatus() {
-        return personStatus;
+    public boolean isUserStatus() {
+        return userStatus;
     }
 
-    public void setPersonStatus(boolean personStatus) {
-        this.personStatus = personStatus;
+    public void setUserStatus(boolean userStatus) {
+        this.userStatus = userStatus;
     }
 
     public int getDni() {
@@ -95,5 +92,9 @@ public class Person {
     public void setDni(int dni) {
         this.dni = dni;
     }
+
+    /*
+     * Getters and Setters
+     */
 
 }

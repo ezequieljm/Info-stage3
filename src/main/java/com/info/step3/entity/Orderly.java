@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-@Entity(name = "orderly")
+@Entity(name = "orderlys")
 public class Orderly {
     /*
      * Attributes
@@ -25,8 +25,8 @@ public class Orderly {
     private Event idEvent;
 
     @ManyToOne
-    @JoinColumn(name = "id_person")
-    private Person idPerson;
+    @JoinColumn(name = "id_user")
+    private User idUser;
 
     @Column(name = "orderly_date_hour")
     private Date orderlyDateHour;
@@ -43,11 +43,11 @@ public class Orderly {
     public Orderly() {
     }
 
-    public Orderly(Long idOrderly, Event idEvent, Person idPerson, Date orderlyDateHour, String alfaCode,
+    public Orderly(Long idOrderly, Event idEvent, User idUser, Date orderlyDateHour, String alfaCode,
             boolean orderlyStatus) {
         this.idOrderly = idOrderly;
         this.idEvent = idEvent;
-        this.idPerson = idPerson;
+        this.idUser = idUser;
         this.orderlyDateHour = orderlyDateHour;
         this.alfaCode = alfaCode;
         this.orderlyStatus = orderlyStatus;
@@ -72,12 +72,12 @@ public class Orderly {
         this.idEvent = idEvent;
     }
 
-    public Person getIdPerson() {
-        return idPerson;
+    public User getIdUser() {
+        return idUser;
     }
 
-    public void setIdPerson(Person idPerson) {
-        this.idPerson = idPerson;
+    public void setIdUser(User idUser) {
+        this.idUser = idUser;
     }
 
     public Date getOrderlyDateHour() {
